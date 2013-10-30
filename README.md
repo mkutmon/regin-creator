@@ -1,4 +1,4 @@
 regin-creator
 =============
 
-Scripts to create RegINs (Regulatory Interaction Networks) from several different databases
+Scripts to create RegINs (Regulatory Interaction Networks) for several different databases
