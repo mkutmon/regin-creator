@@ -1,0 +1,12 @@
+----------------------------------------------------------------
+2013-10-31 14:35:33.121 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.4.2.0 - (689064): instance a816c00e-0142-0ef0-d2d9-0000032e68f8
+on database directory jar:(/home/martina/Data/Pathvisio/databases/mirbase-v19.bridge)database in READ ONLY mode 
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2013-10-31 14:35:33.768 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.4.2.0 - (689064): instance 582f8014-0142-0ef0-d2d9-0000032e68f8
+on database directory jar:(/home/martina/Data/Pathvisio/databases/Hs_Derby_20130701.bridge)database in READ ONLY mode 
+
+Database Class Loader started - derby.database.classpath=''
