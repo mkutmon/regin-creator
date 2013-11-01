@@ -33,14 +33,10 @@ public class GenericCreator {
 	private interface Args extends AHelp, AFilesIn, AFilesOut {}
 	
 	/**
-	 * MAIN METHOD
-	 * USAGE: java -cp conversion.jar cytargetlinker.conversion.MiRecords 
 	 * ARGUMENTS: 
 	 * -i = input file
 	 * -o = output file
-	 * --bridgeDbFile = BridgeDb mapping files for source and target nodes
-	 * --organism "Mus musculus" or "Homo sapiens" 
-	 * -v = database version
+	 * -c = config file
 	 */
 	public static void main(String argv[]) throws Exception {
 
@@ -86,7 +82,8 @@ public class GenericCreator {
 	private String networkName;
 	private IDMapper sourceIdMapper;
 	private IDMapper targetIdMapper;
-	private String [] header;
+	private String [] header;	
+	private int nomimat = 0;
 	
 	public Graph convert(File input) {
 		graph = new Graph();
@@ -133,7 +130,12 @@ public class GenericCreator {
 			log.severe("Could not convert file to RegIN: " + e.getMessage());
 			e.printStackTrace();
 		}
-		
+		edges.clear();
+		foundConnections.clear();
+		nodes.clear();
+		attr = null;
+		sourceIdMapper = null;
+		targetIdMapper = null;
 		return graph;
 	}
 
@@ -228,14 +230,13 @@ public class GenericCreator {
 		}
 		return identifiers;
 	}
-	
-	private int nomimat = 0;
+
 
 	private void registerNode(Node node, String syscodeIn, IDMapper mapper) throws IDMapperException {
 		String id = node.getId();
 		Xref xref = new Xref(id, DataSource.getBySystemCode(syscodeIn));
 		if(mapper != null) {
-
+			System.out.println("###" + xref.getId());
 			// if node is a microRNA check if there is a MIMAT identifier
 			if(syscodeIn.equals("Mb")) {
 				Set<Xref> result = mapper.mapID(xref, DataSource.getBySystemCode("Mbm"));
@@ -255,6 +256,7 @@ public class GenericCreator {
 			for(Xref x : result) {
 				if(!x.getId().equals(id)) {
 					nodes.put(x.getId(), node);
+					System.out.println("\t###" + x.getId());
 				}
 			}
 		}
