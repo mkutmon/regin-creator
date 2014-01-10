@@ -11,7 +11,7 @@ This program allows you to create a RegIN file that can be used with CyTargetLin
 
 How to run the script with your own tab-delimited text file?
 
-1. Download the latest release from https://github.com/mkutmon/regin-creator/blob/master/releases/. You will need the jar file and the dependencies zip file which contains a lib directory with all dependencies.
+1. Download the latest release from https://github.com/mkutmon/regin-creator/blob/master/releases/. You will need the jar file and the dependencies zip file which contains a lib directory with all dependencies. Unzip the dependencies.zip and make sure the lib directory is in the same directory as the jar file, so it can find all dependencies.
 2. Create a config file like the template here: https://github.com/mkutmon/regin-creator/blob/master/template.config.
  * name = database name (required)
  * organism = species (optional)
