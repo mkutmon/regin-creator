@@ -35,5 +35,5 @@ How to run the script with your own tab-delimited text file?
           
           
 3. Run the converter file with the input file (tab delimited text file containing the interaction data), the config file (as described in point 2) and an output file (e.g. output.xgmml).
- * java -jar converter-x.x.jar -i input.txt -o output.xgmml -c file.config
+ * java -jar -Dfile.encoding=UTF-8 converter-x.x.jar -i input.txt -o output.xgmml -c file.config
  
